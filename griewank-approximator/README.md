@@ -7,10 +7,11 @@ Sources
  - source: https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html#create-model-and-dataparallel
 
 Slurm Commands
-...
- - module load Anaconda3/5.3.0
- - conda create -n pytorch
- - source activate pytorch
- - conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch  #this only the first time
- - salloc -N1 --ntasks-per-node=4 --gres=gpu:4 
- - python pytorch_deep_regr_mult_gpu_mult_nodes.py
+```
+module load Anaconda3/5.3.0
+conda create -n pytorch
+source activate pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch  #this only the first time
+salloc -N1 --ntasks-per-node=4 --gres=gpu:4 
+python pytorch_deep_regr_mult_gpu_mult_nodes.py
+```

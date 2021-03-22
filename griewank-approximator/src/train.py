@@ -1,7 +1,5 @@
 # Train script
 
-
-import IPython
 import numpy as np
 from tqdm.notebook import tqdm
 import torch
@@ -17,16 +15,21 @@ import time
 
 
 def func(x):
+    '''
+    Create the Griewank function
+    '''
     return 1 + (1/4000)*sum((x+7)**2) - np.prod(np.cos((x+7) / range(1, len(x)+1, 1)))
 
 
-#Create Artificial Data
-obs=int(1e6)#set number of observations
-vars=100#set number of features
-X=20*(random.rand(obs,vars).astype(np.float32)-1/2)
-y=np.zeros(obs).astype(np.float32)
-for i in range(obs):
-    y[i]=func(X[i,:])
+def simulate_data():
+    observations = int(1e6)
+    features = 100
+    X= 20*(random.rand(observations, features).astype(np.float32)-1/2)
+    y=np.zeros(observations).astype(np.float32)
+    for i in range(observations):
+        y[i] = func(X[i,:])
+
+
 
 # Train - Test
 X_trainval, X_test, y_trainval, y_test = train_test_split(X, y, test_size=0.2, random_state=None)

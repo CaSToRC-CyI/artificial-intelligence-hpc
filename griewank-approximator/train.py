@@ -117,8 +117,8 @@ if __name__ == "__main__":
         loss_stats['train'].append(normed_train_epoch_loss)
         loss_stats['val'].append(normed_val_epoch_loss)  
         
-        print(f"Epoch={epoch}, Train_epoch_loss={normed_train_epoch_loss}, \ 
-              Validation_epoch_loss={normed_val_epoch_loss}") 
+        print(f"Epoch={epoch}, Train_epoch_loss={normed_train_epoch_loss},Validation_epoch_loss={normed_val_epoch_loss}"
+) 
 
     t2=time.time()
     t2_t1 = "%.1f" % (t2-t1)
